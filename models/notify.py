@@ -12,8 +12,9 @@ class Notify(db.Model):
     sent_date = db.Column(db.DateTime)
     label = db.Column(db.String(255))
 
-
     def __init__(self, topic=None, content=None, user=None, message_read=False,):
+        '''Funcion de construccion del objeto. Los que no pueden ser nullable los
+         ponemos a False para poder crear un objeto vacío con sus atributos.'''
         # Igualamos a None para poder crear un NMessage vacio
         self.topic = topic
         self.content = content
@@ -22,7 +23,7 @@ class Notify(db.Model):
 
 
     def __repr__(self):
-        '''Llamamos a esta funcion para imprimir datos'''
+        '''Llamamos a esta funcion para imprimir datos de forma semantica'''
         return {
             'id': self.id,
             'topic': self.topic,
