@@ -23,7 +23,9 @@ class Notify(db.Model):
 
 
     def __repr__(self):
-        '''Llamamos a esta funcion para imprimir datos de forma semantica'''
+        '''Llamamos a esta funcion para imprimir datos de forma semantica.'''
+        # Los diccionarios en Python llevan por debajo un método __repr__ que se encarga de imprimirlos bonitos :) 
+        # Además, nos viene bien para poder pasar el contenido de nuestra Clase en formato de Objeto JSON
         return {
             'id': self.id,
             'topic': self.topic,
