@@ -31,5 +31,6 @@ class StudyGroup(db.Model):
             'date': self.date,
             'description': self.description,
             'place': self.place,
-            'admins': self.admins
+            'admins': self.admins,
+            'users': self.users
         }
