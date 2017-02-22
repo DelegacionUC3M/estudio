@@ -12,7 +12,7 @@ class Notify(db.Model):
     sent_date = db.Column(db.DateTime)
     label = db.Column(db.String(255))
 
-    def __init__(self, topic=None, content=None, user=None, message_read=False,):
+    def __init__(self, topic=None, content=None, user=None, message_read=False):
         '''Funcion de construccion del objeto. Los que no pueden ser nullable los
          ponemos a False para poder crear un objeto vacío con sus atributos.'''
         # Igualamos a None para poder crear un NMessage vacio
