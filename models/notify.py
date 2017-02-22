@@ -3,7 +3,7 @@ from .connection import db
 
 class Notify(db.Model):
     # Id siempre aparecera, aunque no lo hayamos contemplado en la tabla
-    id = db.Column(db.Integer, primary_key=True, autoincrement=1)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     topic = db.Column(db.String(255), nullable=False)
     # Clave foranea: nombre_tabla.nombre_atributo
     user = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
@@ -26,7 +26,7 @@ class Notify(db.Model):
         '''Llamamos a esta funcion para imprimir datos de forma semantica.'''
         # Los diccionarios en Python llevan por debajo un método __repr__ que se encarga de imprimirlos bonitos :) 
         # Además, nos viene bien para poder pasar el contenido de nuestra Clase en formato de Objeto JSON
-        return {
+        return str({
             'id': self.id,
             'topic': self.topic,
             'user': self.user,
@@ -34,4 +34,4 @@ class Notify(db.Model):
             'message_read': self.message_read,
             'sent_date': self.sent_date,
             'label': self.label
-        }
+        })
