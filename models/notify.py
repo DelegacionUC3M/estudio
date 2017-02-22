@@ -6,7 +6,7 @@ class Notify(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=1)
     topic = db.Column(db.String(255), nullable=False)
     # Clave foranea: nombre_tabla.nombre_atributo
-    user = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     content = db.Column(db.Text, nullable=False)
     message_read = db.Column(db.Boolean, nullable=False)
     sent_date = db.Column(db.DateTime)
